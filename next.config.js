@@ -2,9 +2,13 @@
 // So, we write it in vanilla JS
 // (But you could use ES2015 features supported by your Node.js version)
 
+
+
+
 const debug = process.env.NODE_ENV !== "production";
 
-module.exports = {
+module.exports = 
+{
   exportPathMap: function () {
     return {
       "/": { page: "/" },
@@ -25,12 +29,5 @@ module.exports = {
     })
     // Important: return the modified config
     return config
-  }/*,
-  webpackDevMiddleware: (config) => {
-    // Perform customizations to webpack dev middleware config
-    // console.log('webpackDevMiddleware');
-    // console.log(config);
-    // Important: return the modified config
-    return config
-  }, */
+  }
 }
