@@ -2,8 +2,19 @@ import React from 'react'
 
 function Index(){
   return(
-    <div>
-      <h1 className="super">Hola</h1>
+    <div className="personal">
+      <div className="sectionMenu">
+        <div className="headerMenu">
+          <img src="https://i.pinimg.com/564x/23/e3/95/23e3955dec33e9b4f4a1db30d1844216.jpg" alt="personal photography"/>
+          <h3>Jean Hernández</h3>
+        </div>
+      </div>
+      <div className="sectionImages">
+        <p>seccion de imagenes</p>
+      </div>
+      <div className="sectionDesc">
+        <p>seccion de descripcion</p>
+      </div>
     </div>
   )
 }
