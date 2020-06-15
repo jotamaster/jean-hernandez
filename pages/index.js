@@ -10,7 +10,7 @@ function Index(){
         </div>
       </div>
       <div className="sectionImages">
-        <p>seccion de imagenes</p>
+        {/* <img src="https://i.pinimg.com/564x/55/3a/12/553a12d8ba7860bcddfb4186cf0c99dd.jpg" alt="personal gallery"/> */}
       </div>
       <div className="sectionDesc">
         <p>seccion de descripcion</p>
