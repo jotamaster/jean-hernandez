@@ -30,7 +30,7 @@
 	.sectionImages {
 		background-color: red;
 		flex: 39;
-		background-image: url('https://i.pinimg.com/564x/55/3a/12/553a12d8ba7860bcddfb4186cf0c99dd.jpg');
+		//background-image: url('https://i.pinimg.com/564x/55/3a/12/553a12d8ba7860bcddfb4186cf0c99dd.jpg');
 		background-size: cover;
 		background-position: center;
 		img {
@@ -91,4 +91,14 @@
 			}
 		}
 	}
+}
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+	// height: 100vh;
+	// width: calc(100vw - 61vw);
+	// max-width: calc(100vw - 61vw);
+	// max-height: 100vh;
+	max-width: 100%;
+    max-height: 100%;
+	vertical-align: middle;
+	width: 100%;
 }
