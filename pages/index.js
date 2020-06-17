@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from "react";
+import classNames from 'classnames'
 
 function Index() {
-	const myfunction = () => {
+  const [openMenu, setOpenMenu] = useState(false)
+  
+  
+  const handleSlider = () => {
 		statusImage = !statusImage;
 		if (statusImage) {
 			if (typeof window !== 'undefined') {
@@ -16,16 +20,44 @@ function Index() {
 			}
 		}
 		setTimeout(() => {
-			myfunction();
+			handleSlider();
 		}, 8000);
 	};
 
 	let statusImage = true;
-	myfunction();
+  handleSlider();
 
+    const toggleMenu = () =>{
+      setOpenMenu(!openMenu)
+    }
+  
+	let containerClass = classNames({
+    'personal':true,
+  })
+  let btnClass = classNames({
+    'toggle':true,
+    'active': openMenu,
+    'openMenu': openMenu
+
+  })
+   let sectionMenuClass = classNames({
+     'sectionMenu':true,
+     'sectionMenuMobile':openMenu,
+   })
+   let sectionImagesClass = classNames({
+    'sectionImages':true,
+    'sectionImageMobile':openMenu,
+  })
+   let sectionDescClass = classNames({
+    'sectionDesc':true,
+    'displayNone':openMenu,
+  })
 	return (
-		<div className="personal">
-			<div className="sectionMenu">
+	<div className={containerClass}>
+      <a className={btnClass} onClick={()=> toggleMenu()} >
+      <i></i>
+      </a>
+			<div className={sectionMenuClass}>
 				<div className="headerMenu">
 					<img
 						src="https://i.pinimg.com/564x/23/e3/95/23e3955dec33e9b4f4a1db30d1844216.jpg"
@@ -43,12 +75,12 @@ function Index() {
 				</div>
 				
 			</div>
-			<div id="slider" className="sectionImages">
+			<div id="slider" className={sectionImagesClass}>
 			</div>
-			<div className="sectionDesc">
+			<div className={sectionDescClass}>
 				<div className="desc">
 					<p className="padding" />
-					<p className="preTitle">Hello! I'm</p>
+    <p className="preTitle">Hello! I'm {openMenu}</p>
 					<h3 className="fontTitle">Jean Hernández</h3>
 					<p className="titleDesc">
 						Jean Hernández <span>un programador.</span> aficionados a la tecnología
