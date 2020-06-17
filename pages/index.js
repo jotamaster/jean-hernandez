@@ -32,20 +32,18 @@ function Index() {
 						alt="personal photography"
 					/>
 					<h3>Jean Hernández {statusImage}</h3>
+          <div className="menu">
+          <div className="item">
+            <p>Home</p>
+          </div>
+          <div className="item">
+            <p>Blog</p>
+          </div>
 				</div>
+				</div>
+				
 			</div>
 			<div id="slider" className="sectionImages">
-				{/* <ImageGallery 
-					showNav={false} 
-					size={'300px'}
-					showThumbnails={false}
-					items={images} 
-					showFullscreenButton={false}
-					showPlayButton={false}
-					autoPlay={false}
-					slideInterval={6000}
-					additionalClass={'mislide'}
-				/> */}
 			</div>
 			<div className="sectionDesc">
 				<div className="desc">
