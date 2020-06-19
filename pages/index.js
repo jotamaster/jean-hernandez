@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import classNames from 'classnames'
+import React, { useState } from 'react';
+import Link from 'next/link';
+import classNames from 'classnames';
 
 function Index() {
-  const [openMenu, setOpenMenu] = useState(false)
-  
-  
-  const handleSlider = () => {
+	const [ openMenu, setOpenMenu ] = useState(false);
+
+	const handleSlider = () => {
 		statusImage = !statusImage;
 		if (statusImage) {
 			if (typeof window !== 'undefined') {
@@ -25,38 +25,37 @@ function Index() {
 	};
 
 	let statusImage = true;
-  handleSlider();
+	//handleSlider();
 
-    const toggleMenu = () =>{
-      setOpenMenu(!openMenu)
-    }
-  
+	const toggleMenu = () => {
+		setOpenMenu(!openMenu);
+	};
+
 	let containerClass = classNames({
-    'personal':true,
-  })
-  let btnClass = classNames({
-    'toggle':true,
-    'active': openMenu,
-    'openMenu': openMenu
-
-  })
-   let sectionMenuClass = classNames({
-     'sectionMenu':true,
-     'sectionMenuMobile':openMenu,
-   })
-   let sectionImagesClass = classNames({
-    'sectionImages':true,
-    'sectionImageMobile':openMenu,
-  })
-   let sectionDescClass = classNames({
-    'sectionDesc':true,
-    'displayNone':openMenu,
-  })
+		personal: true
+	});
+	let btnClass = classNames({
+		toggle: true,
+		active: openMenu,
+		openMenu: openMenu
+	});
+	let sectionMenuClass = classNames({
+		sectionMenu: true,
+		sectionMenuMobile: openMenu
+	});
+	let sectionImagesClass = classNames({
+		sectionImages: true,
+		sectionImageMobile: openMenu
+	});
+	let sectionDescClass = classNames({
+		sectionDesc: true,
+		displayNone: openMenu
+	});
 	return (
-	<div className={containerClass}>
-      <a className={btnClass} onClick={()=> toggleMenu()} >
-      <i></i>
-      </a>
+		<div className={containerClass}>
+			<a className={btnClass} onClick={() => toggleMenu()}>
+				<i />
+			</a>
 			<div className={sectionMenuClass}>
 				<div className="headerMenu">
 					<img
@@ -64,23 +63,25 @@ function Index() {
 						alt="personal photography"
 					/>
 					<h3>Jean Hernández {statusImage}</h3>
-          <div className="menu">
-          <div className="item">
-            <p>Home</p>
-          </div>
-          <div className="item">
-            <p>Blog</p>
-          </div>
+					<div className="menu">
+						<div className="item">
+							<Link href="/" as={process.env.BACKEND_URL + '/'}>
+								<p>Home</p>
+							</Link>
+						</div>
+						<div className="item">
+							<Link href="/blog" as={process.env.BACKEND_URL + '/'}>
+								<p>Blog</p>
+							</Link>
+						</div>
+					</div>
 				</div>
-				</div>
-				
 			</div>
-			<div id="slider" className={sectionImagesClass}>
-			</div>
+			<div id="slider" className={sectionImagesClass} />
 			<div className={sectionDescClass}>
 				<div className="desc">
 					<p className="padding" />
-    <p className="preTitle">Hello! I'm {openMenu}</p>
+					<p className="preTitle">Hello! I'm {openMenu}</p>
 					<h3 className="fontTitle">Jean Hernández</h3>
 					<p className="titleDesc">
 						Jean Hernández <span>un programador.</span> aficionados a la tecnología
