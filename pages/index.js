@@ -70,7 +70,7 @@ function Index() {
 							</Link>
 						</div>
 						<div className="item">
-							<Link href="/blog" as={process.env.BACKEND_URL + '/'}>
+							<Link href="/blog" as={process.env.BACKEND_URL + '/blog'}>
 								<p>Blog</p>
 							</Link>
 						</div>
