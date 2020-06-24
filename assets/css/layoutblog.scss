@@ -1,37 +1,224 @@
-.layoutblog{
-    background-color: white;
-    .navbar{
-        width: 100vw;
-        height: 50px;
-        background-color: #efefef;
-    }
-    .menuMobile{
-        background-color: #efefef;
-        display: grid;
-        padding: 10px 0 0 10px;
-        a{
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        @include for-tablet-portrait-up  {
-          display: none;
+.theme-container{
+  .navbar {
+    z-index: 20;
+    right: 0;
+    height: 3.6rem;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eaecef;
+  }
+  .navbar, .sidebar-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .navbar {
+    padding: .7rem 1.5rem;
+    line-height: 2.2rem;
+    .sidebar-button {
+      cursor: pointer;
+      display: none;
+      width: 1.25rem;
+      height: 1.25rem;
+      position: absolute;
+      padding: .6rem;
+      top: .6rem;
+      left: 1rem;
+      svg:not(:root) {
+        overflow: hidden;
+      }
+      .sidebar-button .icon {
+        display: block;
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+      a:-webkit-any-link {
+        color: -webkit-link;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      a {
+        font-weight: 500;
+        text-decoration: none;
+      }
+      a, p a code {
+        color: #3eaf7c;
       }
     }
-    img{
-        width: 50px;
-        height: 50px;
-        margin-left: 5px;
-        @include for-tablet-portrait-up  {
-          display: none;
-      }
-    }
-    .logo{
-        width: 50px;
-        height: 50px;
-        background-color: red;
+  }
+  .navbar a, .navbar img, .navbar span {
+      display: inline-block;
+  }
+    .navbar span {
+      display: inline-block;
+  }
+  .navbar .site-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    position: relative;
+  }
+  .navbar .links {
+    padding-left: 1.5rem;
+    box-sizing: border-box;
+    background-color: #fff;
+    white-space: nowrap;
+    font-size: .9rem;
+    position: absolute;
+    right: 1.5rem;
+    top: .7rem;
+    display: flex;
+    max-width: 1302px;
+  }
 
-        @include for-phone-only {
-            display: none;
-        }
-    }
+}
+
+  
+
+.search-box {
+  display: inline-block;
+  position: relative;
+  margin-right: 1rem;
+}
+
+.nav-links {
+  display: inline-block;
+}
+.nav-links .nav-item {
+  position: relative;
+  display: inline-block;
+  margin-left: 1.5rem;
+  line-height: 2rem;
+}
+.nav-links .nav-item:first-child {
+  margin-left: 0;
+}
+a {
+  font-weight: 500;
+  text-decoration: none;
+}
+a, p a code {
+  color: #3eaf7c;
+}
+.nav-links a {
+  line-height: 1.4rem;
+  color: inherit;
+}
+.navbar a, .navbar img, .navbar span {
+  display: inline-block;
+}
+.nav-links a.router-link-active, .nav-links a:hover {
+  color: #3eaf7c;
+}
+@media (min-width: 719px){
+    .nav-links a.router-link-active, .nav-links a:hover {
+      color: #2c3e50;
+  }
+}
+
+@media (min-width: 719px){
+  .nav-item>a:not(.external).router-link-active, .nav-item>a:not(.external):hover {
+    margin-bottom: -2px;
+    border-bottom: 2px solid #46bd87;
+  }
+}
+
+.navbar .links .search-box {
+  flex: 0 0 auto;
+  vertical-align: top;
+}
+
+.algolia-search-wrapper>span {
+  vertical-align: middle;
+}
+
+.navbar a, .navbar img, .navbar span {
+  display: inline-block;
+}
+.algolia-search-wrapper .algolia-autocomplete {
+  line-height: normal;
+}
+
+.algolia-autocomplete{
+    position: relative;
+    display: inline-block !important;
+    direction: ltr;
+}
+
+.search-box input {
+  cursor: text;
+  width: 10rem;
+  height: 2rem;
+  color: #4e6e8e;
+  display: inline-block;
+  border: 1px solid #cfd4db;
+  border-radius: 2rem;
+  font-size: .9rem;
+  line-height: 2rem;
+  padding: 0 .5rem 0 2rem;
+  outline: none;
+  transition: all .2s ease;
+  background: #fff url(/assets/img/search.83621669.svg) .6rem .5rem no-repeat;
+  background-size: 1rem;
+  position: relative;
+  vertical-align: top;
+}
+pre{
+    position: absolute;
+    visibility: hidden;
+    white-space: pre;
+    font-family: Arial;
+    font-size: 14.4px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    word-spacing: 0px;
+    letter-spacing: normal;
+    text-indent: 0px;
+    text-rendering: auto;
+    text-transform: none;
+
+}
+
+.algolia-autocomplete .ds-dropdown-menu {
+  top: -6px;
+  border-radius: 4px;
+  margin: 6px 0 0;
+  padding: 0;
+  text-align: left;
+  height: auto;
+  position: relative;
+  background: transparent;
+  border: none;
+  z-index: 999;
+  max-width: 600px;
+  min-width: 500px;
+  box-shadow: 0 1px 0 0 rgba(0,0,0,.2), 0 2px 3px 0 rgba(0,0,0,.1);
+}
+.algolia-search-wrapper .algolia-autocomplete .ds-dropdown-menu {
+  background-color: #fff;
+  border: 1px solid #999;
+  border-radius: 4px;
+  font-size: 16px;
+  margin: 6px 0 0;
+  padding: 4px;
+  text-align: left;
+  position: absolute;
+  top: 100%;
+  z-index: 100;
+  display: none;
+  left: 0px;
+  right: auto;
+}
+.algolia-autocomplete .ds-dropdown-menu [class^=ds-dataset-] {
+  position: relative;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  border-radius: 4px;
+  overflow: auto;
+  padding: 0 8px 8px;
+}
+.algolia-search-wrapper .algolia-autocomplete .ds-dropdown-menu [class*=ds-dataset-] {
+  border: none;
+  padding: 0;
 }
