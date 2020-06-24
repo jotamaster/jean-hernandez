@@ -22,21 +22,16 @@ function blogLayout({ ...props }) {
           <span className="site-name">VuePress</span>
         </a>
         <div className="links">
-          <form
+          {/* <form
             id="search-form"
             role="search"
             className="algolia-search-wrapper search-box"
           >
-            <span
-              className="algolia-autocomplete"
-              
-            >
+            <span className="algolia-autocomplete">
               <input
                 id="algolia-search-input"
                 className="search-query ds-input"
                 placeholder=""
-                autocomplete="off"
-                spellcheck="false"
                 role="combobox"
                 aria-autocomplete="list"
                 aria-expanded="false"
@@ -44,9 +39,7 @@ function blogLayout({ ...props }) {
                 aria-owns="algolia-autocomplete-listbox-0"
                 dir="auto"
               />
-              <pre
-                aria-hidden="true"
-              ></pre>
+              <pre aria-hidden="true"></pre>
               <span
                 className="ds-dropdown-menu"
                 role="listbox"
@@ -55,7 +48,7 @@ function blogLayout({ ...props }) {
                 <div className="ds-dataset-1"></div>
               </span>
             </span>
-          </form>{" "}
+          </form> */}
           <nav className="nav-links can-hide">
             <div className="nav-item">
               <a
@@ -90,7 +83,7 @@ function blogLayout({ ...props }) {
                   <span className="title">Learn More</span>{" "}
                   <span className="arrow right"></span>
                 </button>{" "}
-                <ul className="nav-dropdown" >
+                <ul className="nav-dropdown">
                   <li className="dropdown-item">
                     <h4>API</h4>{" "}
                     <ul className="dropdown-subitem-wrapper">
@@ -224,7 +217,7 @@ function blogLayout({ ...props }) {
                   <span className="title">Languages</span>{" "}
                   <span className="arrow right"></span>
                 </button>{" "}
-                <ul className="nav-dropdown" >
+                <ul className="nav-dropdown">
                   <li className="dropdown-item">
                     {" "}
                     <a
