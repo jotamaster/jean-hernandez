@@ -1,11 +1,23 @@
-import React, { Children } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import classNames from 'classnames';
 
 function blogLayout({ ...props }) {
+const [openMenu,setOpenMenu] = useState(false)
+const toggleMenu = ()=>{
+   setOpenMenu(!openMenu)
+}
+
+let containerClass = classNames({
+  'theme-container': true,
+  'sidebar-open': openMenu
+});
+
+
   return (
-    <div className="theme-container">
+    <div className={containerClass}>
       <header className="navbar">
-        <div className="sidebar-button">
+        <div onClick={toggleMenu} className="sidebar-button">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"

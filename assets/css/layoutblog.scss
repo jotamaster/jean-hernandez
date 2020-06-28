@@ -48,7 +48,18 @@
         color: #3eaf7c;
       }
     }
+    @media (max-width: 719px){
+      .sidebar-button {
+        display: block ;
+      }
+    }
   }
+  @media (max-width: 719px){
+      .navbar {
+        padding-left: 4rem;
+    }
+  }
+
   .navbar a,
   .navbar img,
   .navbar span {
@@ -517,3 +528,27 @@ a.sidebar-link.active {
 a.sidebar-link:hover {
   color: #3eaf7c;
 }
+
+@media (max-width: 719px){
+  .theme-container.sidebar-open .sidebar {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 959px){
+  .sidebar {
+    font-size: 15px;
+    width: 16.4rem;
+  }
+}
+@media (max-width: 719px){
+  .sidebar {
+    top: 0;
+    padding-top: 3.6rem;
+    transform: translateX(-100%);
+    transition: transform .2s ease;
+}
+}
+
+
+
