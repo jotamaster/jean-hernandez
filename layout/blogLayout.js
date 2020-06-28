@@ -1,18 +1,32 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import classNames from 'classnames';
+import classNames from "classnames";
 
 function blogLayout({ ...props }) {
-const [openMenu,setOpenMenu] = useState(false)
-const toggleMenu = ()=>{
-   setOpenMenu(!openMenu)
-}
+  const dataAside = [
+    {
+      section: "Array",
+      content: [
+        {
+          name: "Slice",
+          slug: "slice",
+        },
+        {
+          name: "Concat",
+          slug: "concat",
+        },
+      ],
+    },
+  ];
+  const [openMenu, setOpenMenu] = useState(false);
+  const toggleMenu = () => {
+    setOpenMenu(!openMenu);
+  };
 
-let containerClass = classNames({
-  'theme-container': true,
-  'sidebar-open': openMenu
-});
-
+  let containerClass = classNames({
+    "theme-container": true,
+    "sidebar-open": openMenu,
+  });
 
   return (
     <div className={containerClass}>
@@ -46,18 +60,26 @@ let containerClass = classNames({
                 <a className="nav-link router-link-exact-active ">Blog</a>
               </Link>
             </div>
+            <div className="nav-item">
+              <Link
+                href="/javascript"
+                as={process.env.BACKEND_URL + "/javascript"}
+              >
+                <a className="nav-link router-link-exact-active ">JS</a>
+              </Link>
+            </div>
           </nav>
         </div>
       </header>
       <aside className="sidebar">
         <ul className="sidebar-links">
           <li>
-            <section className="sidebar-group depth-0">
+            {/* <section className="sidebar-group depth-0">
               <p className="sidebar-heading open">
                 <span>Guide</span>
               </p>
               <ul className="sidebar-links sidebar-group-items">
-                <li>
+                 <li>
                   <a href="/guide/" className="active sidebar-link">
                     Introduction
                   </a>
@@ -81,80 +103,43 @@ let containerClass = classNames({
                       </a>
                     </li>
                   </ul>
-                </li>
+                </li> 
                 <li>
-                  <a href="/guide/getting-started.html" className="sidebar-link">
+                  <a
+                    href="/guide/getting-started.html"
+                    className="sidebar-link"
+                  >
                     Getting Started
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="/guide/directory-structure.html"
-                    className="sidebar-link"
-                  >
-                    Directory Structure
-                  </a>
-                </li>
-                <li>
-                  <a href="/guide/basic-config.html" className="sidebar-link">
-                    Configuration
-                  </a>
-                </li>
-                <li>
-                  <a href="/guide/assets.html" className="sidebar-link">
-                    Asset Handling
-                  </a>
-                </li>
-                <li>
-                  <a href="/guide/markdown.html" className="sidebar-link">
-                    Markdown Extensions
-                  </a>
-                </li>
-                <li>
-                  <a href="/guide/using-vue.html" className="sidebar-link">
-                    Using Vue in Markdown
-                  </a>
-                </li>
-                <li>
-                  <a href="/guide/i18n.html" className="sidebar-link">
-                    Internationalization
-                  </a>
-                </li>
-                <li>
-                  <a href="/guide/deploy.html" className="sidebar-link">
-                    Deploying
-                  </a>
-                </li>
               </ul>
-            </section>
+            </section> */}
           </li>
           <li>
             <section className="sidebar-group depth-0">
-              <p className="sidebar-heading">
-                <span>Advanced</span>{" "}
-              </p>{" "}
-              <ul className="sidebar-links sidebar-group-items">
-                <li>
-                  <a href="/guide/frontmatter.html" className="sidebar-link">
-                    Frontmatter
-                  </a>
-                </li>
-                <li>
-                  <a href="/guide/permalinks.html" className="sidebar-link">
-                    Permalinks
-                  </a>
-                </li>
-                <li>
-                  <a href="/guide/markdown-slot.html" className="sidebar-link">
-                    Markdown Slot
-                  </a>
-                </li>
-                <li>
-                  <a href="/guide/global-computed.html" className="sidebar-link">
-                    Global Computed
-                  </a>
-                </li>
-              </ul>
+              {dataAside.map((aside, i) => {
+                return (
+                  <div>
+                    <p className="sidebar-heading">
+                      <span>{aside.section}</span>
+                    </p>
+                    {aside.content.map((content, i) => {
+                      return (
+                        <ul className="sidebar-links sidebar-group-items">
+                          <li>
+                            <a
+                              href={`#${content.slug}`}
+                              className="sidebar-link"
+                            >
+                              {content.name}
+                            </a>
+                          </li>
+                        </ul>
+                      );
+                    })}
+                  </div>
+                );
+              })}
             </section>
           </li>
         </ul>

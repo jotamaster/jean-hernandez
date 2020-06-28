@@ -74,6 +74,11 @@ function Index() {
 								<p>Blog</p>
 							</Link>
 						</div>
+						<div className="item">
+							<Link href="/javascript" as={process.env.BACKEND_URL + '/javascript'}>
+								<p>Javascript</p>
+							</Link>
+						</div>
 					</div>
 				</div>
 			</div>
