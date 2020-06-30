@@ -2,22 +2,9 @@ import React, { useState } from "react";
 import Link from "next/link";
 import classNames from "classnames";
 
-function blogLayout({ ...props }) {
-  const dataAside = [
-    {
-      section: "Array",
-      content: [
-        {
-          name: "Slice",
-          slug: "slice",
-        },
-        {
-          name: "Concat",
-          slug: "concat",
-        },
-      ],
-    },
-  ];
+function blogLayout(props ) {
+
+
   const [openMenu, setOpenMenu] = useState(false);
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
@@ -117,15 +104,15 @@ function blogLayout({ ...props }) {
           </li>
           <li>
             <section className="sidebar-group depth-0">
-              {dataAside.map((aside, i) => {
+              {props.menu.map((aside, i) => {
                 return (
-                  <div>
+                  <div key={i+'section'}>
                     <p className="sidebar-heading">
                       <span>{aside.section}</span>
                     </p>
                     {aside.content.map((content, i) => {
                       return (
-                        <ul className="sidebar-links sidebar-group-items">
+                        <ul className="sidebar-links sidebar-group-items" key={i+'option'}>
                           <li>
                             <a
                               href={`#${content.slug}`}
