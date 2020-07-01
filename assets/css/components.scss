@@ -1,0 +1,24 @@
+.basicPost{
+    .title{
+        margin-top: -3.1rem;
+        padding-top: 4.6rem;
+        margin-bottom: 0;
+        font-size: 1.65rem;
+        padding-bottom: .3rem;
+        border-bottom: 1px solid #eaecef;
+        a.header-anchor {
+            font-size: .85em;
+            float: left;
+            margin-left: -.87em;
+            padding-right: .23em;
+            margin-top: .125em;
+            opacity: 0;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+     h2:hover .header-anchor {
+        opacity: 1;
+    }
+}

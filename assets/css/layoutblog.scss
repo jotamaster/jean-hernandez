@@ -547,8 +547,28 @@ a.sidebar-link:hover {
     padding-top: 3.6rem;
     transform: translateX(-100%);
     transition: transform .2s ease;
+  }
 }
+.page {
+  padding-left: 20rem;
 }
+
+@media (max-width: 959px){
+  .page {
+    padding-left: 16.4rem;
+  }
+}
+
+.page {
+  padding-bottom: 2rem;
+  display: block;
+}
+.theme-default-content:not(.custom) {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem;
+}
+
 
 
 

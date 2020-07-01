@@ -16,6 +16,21 @@
               }
             ]
            }
+         ],
+         "components":[
+           {
+             "section":"Componentes",
+             "content":[
+               {
+                 "name":"Vistas",
+                 "slug":"vistas"
+               },
+               {
+                "name":"Props",
+                "slug":"props"
+              }
+             ]
+           }
          ]
        }
      

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Children } from "react";
 import Link from "next/link";
 import classNames from "classnames";
 
@@ -131,6 +131,11 @@ function blogLayout(props ) {
           </li>
         </ul>
       </aside>
+      <main className="page">
+        <div className="theme-default-content content__default">
+              {props.children}
+        </div>
+      </main>
     </div>
   );
 }
