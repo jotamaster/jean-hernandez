@@ -1,0 +1,37 @@
+
+ {
+    "data":
+       {
+         "javascript":[
+          {
+            "section": "Array",
+            "content": [
+              {
+                "name": "Slice",
+                "slug": "slice"
+              },
+              {
+                "name": "Concat",
+                "slug": "concat"
+              }
+            ]
+           }
+         ],
+         "components":[
+           {
+             "section":"Componentes",
+             "content":[
+               {
+                 "name":"Vistas",
+                 "slug":"vistas"
+               },
+               {
+                "name":"Props",
+                "slug":"props"
+              }
+             ]
+           }
+         ]
+       }
+     
+}
