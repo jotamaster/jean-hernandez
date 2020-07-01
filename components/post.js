@@ -5,7 +5,7 @@ function post(props){
   return(
     <div className="basicPost">
       <h2 className="title"> 
-      <a href="#quick-start" aria-hidden="true" class="header-anchor">#</a>
+      <a href="#post" aria-hidden="true" class="header-anchor">#</a>
         Post basico
       </h2>
     </div>
