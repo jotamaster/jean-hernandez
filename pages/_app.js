@@ -16,7 +16,7 @@ export default function MyApp({ Component, pageProps }) {
     dataMenu = menu.data[clearNameRouter(router.pathname)]
   }
   
-  return (<BlogLayout menu={dataMenu}>
+  return (<BlogLayout urlBase={clearNameRouter(router.pathname)} menu={dataMenu}>
           <Component {...pageProps} />
         </BlogLayout>)
   

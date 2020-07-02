@@ -1,6 +1,7 @@
 
 const clearNameRouter = (routerpath) =>{
-    return routerpath.replace('/','')
+    return routerpath.split('/')[1]
+    
 }
 
 export default clearNameRouter

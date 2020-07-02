@@ -108,7 +108,9 @@ function blogLayout(props ) {
                 return (
                   <div key={i+'section'}>
                     <p className="sidebar-heading">
-                      <span>{aside.section}</span>
+                      <Link href={`/${props.urlBase}/${aside.section}`} as={process.env.BACKEND_URL + '/'+props.urlBase+aside.slug}>
+                        <a>{aside.section}</a>
+                      </Link>
                     </p>
                     {aside.content.map((content, i) => {
                       return (
