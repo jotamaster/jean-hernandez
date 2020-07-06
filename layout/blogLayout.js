@@ -32,9 +32,12 @@ function blogLayout(props ) {
             ></path>
           </svg>
         </div>
-        <a href="/" className="home-link router-link-active">
-          <span className="site-name">JH</span>
-        </a>
+        <Link href={`/${props.urlBase}/${aside.section}`} as={process.env.BACKEND_URL + '/'+props.urlBase+aside.slug}>
+          <a className="home-link router-link-active">
+            <span className="site-name">JH</span>
+          </a>
+        </Link>
+        
         <div className="links">
           <nav className="nav-links can-hide">
             <div className="nav-item">
